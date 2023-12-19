@@ -1,21 +1,12 @@
 'use server'
 
 import { revalidatePath } from 'next/cache'
-
 import { connectToDatabase } from '@/lib/database'
 import Event from '@/lib/database/models/event.model'
 import User from '@/lib/database/models/user.model'
 import Category from '@/lib/database/models/category.model'
 import { handleError } from '@/lib/utils'
-
-import {
-  CreateEventParams,
-  UpdateEventParams,
-  DeleteEventParams,
-  GetAllEventsParams,
-  GetEventsByUserParams,
-  GetRelatedEventsByCategoryParams,
-} from '@/types'
+import { CreateEventParams, UpdateEventParams, DeleteEventParams, GetAllEventsParams, GetEventsByUserParams, GetRelatedEventsByCategoryParams } from '@/types'
 
 const getCategoryByName = async (name: string) => {
   return Category.findOne({ name: { $regex: name, $options: 'i' } })
@@ -34,6 +25,11 @@ export async function createEvent({ userId, event, path }: CreateEventParams) {
 
     const organizer = await User.findById(userId)
     if (!organizer) throw new Error('Organizer not found')
+
+    console.log({
+      categoryId: event.categoryId,
+      organizerId: userId
+    })
 
     const newEvent = await Event.create({ ...event, category: event.categoryId, organizer: userId })
     revalidatePath(path)
