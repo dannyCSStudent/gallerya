@@ -8,6 +8,7 @@ import { checkoutOrder } from '@/lib/actions/order.actions';
 loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
 const Checkout = ({ event, userId }: { event: IEvent, userId: string }) => {
+  
   useEffect(() => {
     // Check to see if this is a redirect back from Checkout
     const query = new URLSearchParams(window.location.search);
@@ -21,6 +22,7 @@ const Checkout = ({ event, userId }: { event: IEvent, userId: string }) => {
   }, []);
 
   const onCheckout = async () => {
+   
     const order = {
       eventTitle: event.title,
       eventId: event._id,
@@ -28,6 +30,8 @@ const Checkout = ({ event, userId }: { event: IEvent, userId: string }) => {
       isFree: event.isFree,
       buyerId: userId
     }
+    console.log("this is the oder object: ", order)
+    
 
     await checkoutOrder(order);
   }

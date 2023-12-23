@@ -11,6 +11,7 @@ import {ObjectId} from 'mongodb';
 import User from '../database/models/user.model';
 
 export const checkoutOrder = async (order: CheckoutOrderParams) => {
+  console.log("this is in the stripe order : ", order)
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
   const price = order.isFree ? 0 : Number(order.price) * 100;
@@ -45,6 +46,7 @@ export const checkoutOrder = async (order: CheckoutOrderParams) => {
 }
 
 export const createOrder = async (order: CreateOrderParams) => {
+  console.log(order, 'this is the oder object')
   try {
     await connectToDatabase();
     
