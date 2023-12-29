@@ -16,10 +16,11 @@ const Header = () => {
             className='w-36'
           >
             <Image 
-              src='/assets/images/logo.webp' 
-              width={45} 
-              height={45} 
+              src='/assets/images/logo.jpg' 
+              width={50} 
+              height={50} 
               alt='logo'
+              className='rounded-full'
             />
           </Link>
           <SignedIn>

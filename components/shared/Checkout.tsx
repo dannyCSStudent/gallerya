@@ -30,8 +30,6 @@ const Checkout = ({ event, userId }: { event: IEvent, userId: string }) => {
       isFree: event.isFree,
       buyerId: userId
     }
-    console.log("this is the oder object: ", order)
-    
 
     await checkoutOrder(order);
   }

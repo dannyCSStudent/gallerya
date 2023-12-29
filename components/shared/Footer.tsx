@@ -7,10 +7,11 @@ const Footer = () => {
       <div className="flex-center wrapper flex-between flex flex-col gap-4 p-5 text-center sm:flex-row">
         <Link href='/'>
           <Image 
-            src="/assets/images/logo.webp"
+            src="/assets/images/logo.jpg"
             alt="logo"
             width={45}
             height={45}
+            className="rounded-full"
           />
         </Link>
 

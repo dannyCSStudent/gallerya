@@ -21,8 +21,8 @@ module.exports = withUt({
       colors: {
         primary: {
           500: '#624CF5',
-          50: ' #F6F8FD',
-          DEFAULT: '#624CF5',
+          50: 'rgb(226 232 240)',  // slate looking
+          DEFAULT: '#000000', // color for the buttons
           foreground: 'hsl(var(--primary-foreground))',
         },
         coral: {
@@ -71,7 +71,7 @@ module.exports = withUt({
       },
       backgroundImage: {
         'dotted-pattern': "url('/assets/images/dotted-pattern.png')",
-        'hero-img': "url('/assets/images/hero.png')",
+        'hero-img': "url('/assets/images/hero.jpg')",
       },
       borderRadius: {
         lg: 'var(--radius)',
