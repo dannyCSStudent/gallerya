@@ -12,7 +12,7 @@ const poppins = Poppins({ subsets:
 export const metadata: Metadata = {
   title: 'Gallerya',
   description: 'Gallerya is a platform for managing your AI art',
-  icons: '/assets/images/logo.jpg'
+  icons: '/assets/images/logo.png'
 }
 
 export default function RootLayout({

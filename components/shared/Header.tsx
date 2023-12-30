@@ -16,7 +16,7 @@ const Header = () => {
             className='w-36'
           >
             <Image 
-              src='/assets/images/logo.jpg' 
+              src='/assets/images/logo.png' 
               width={50} 
               height={50} 
               alt='logo'
